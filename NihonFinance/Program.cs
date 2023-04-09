@@ -1,7 +1,11 @@
+using NihonFinance.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllers().ConfigureApiBehaviorOptions(options => { options.SuppressModelStateInvalidFilter = true; });
 ConfigureServices(builder);
 
 var app = builder.Build();
@@ -18,5 +22,6 @@ app.Run();
 
 void ConfigureServices(WebApplicationBuilder builder)
 {
-
+    builder.Services.AddRepository();
+    builder.Services.AddServices();
 }
