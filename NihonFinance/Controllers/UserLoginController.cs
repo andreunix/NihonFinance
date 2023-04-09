@@ -1,6 +1,6 @@
 ﻿namespace NihonFinance.Controllers
 {
-    public class _
+    public class UserLogin
     {
     }
 }
